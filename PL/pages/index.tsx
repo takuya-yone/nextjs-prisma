@@ -24,6 +24,12 @@ const Home: NextPage = () => {
         <a href="/api/findMany"className={styles.description}>
           <code className={styles.code}>/api/findMany</code>
         </a>
+        <a href="/api/create"className={styles.description}>
+          <code className={styles.code}>/api/create</code>
+        </a>
+        <a href="/api/findUnique"className={styles.description}>
+          <code className={styles.code}>/api/findUnique</code>
+        </a>
         <a href="/api/findUnique/90"className={styles.description}>
           <code className={styles.code}>/api/findUnique/90</code>
         </a>
