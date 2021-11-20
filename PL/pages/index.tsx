@@ -3,6 +3,8 @@ import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import prisma from '../lib/prisma';
+import Link from 'next/link';
+
 
 const Home: NextPage = () => {
   return (
@@ -18,21 +20,21 @@ const Home: NextPage = () => {
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
 
-        <a href="/api/count"className={styles.description}>
+        <Link href="/api/count" className={styles.description}>
           <code className={styles.code}>/api/count</code>
-        </a>
-        <a href="/api/findMany"className={styles.description}>
+        </Link>
+        <Link href="/api/findMany" className={styles.description}>
           <code className={styles.code}>/api/findMany</code>
-        </a>
-        <a href="/api/create"className={styles.description}>
+        </Link>
+        <Link href="/api/create" className={styles.description}>
           <code className={styles.code}>/api/create</code>
-        </a>
-        <a href="/api/findUnique"className={styles.description}>
+        </Link>
+        <Link href="/api/findUnique" className={styles.description}>
           <code className={styles.code}>/api/findUnique</code>
-        </a>
-        <a href="/api/findUnique/90"className={styles.description}>
+        </Link>
+        <Link href="/api/findUnique/90" className={styles.description}>
           <code className={styles.code}>/api/findUnique/90</code>
-        </a>
+        </Link>
       </main>
 
       <footer className={styles.footer}>
