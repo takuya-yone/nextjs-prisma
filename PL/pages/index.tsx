@@ -4,9 +4,11 @@ import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import prisma from '../lib/prisma';
 import Link from 'next/link';
-
+// import axios from 'axios';
 
 const Home: NextPage = () => {
+  // axios.get('/api/count').then((response) => console.log(response));
+
   return (
     <div className={styles.container}>
       <Head>
@@ -20,20 +22,30 @@ const Home: NextPage = () => {
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
 
-        <Link href="/api/count" className={styles.description}>
-          <code className={styles.code}>/api/count</code>
+        <Link passHref href="/api/count">
+          <p className={styles.description}>
+            <code className={styles.code}>/api/count</code>
+          </p>
         </Link>
-        <Link href="/api/findMany" className={styles.description}>
-          <code className={styles.code}>/api/findMany</code>
+        <Link passHref href="/api/findMany">
+          <p className={styles.description}>
+            <code className={styles.code}>/api/findMany</code>
+          </p>
         </Link>
-        <Link href="/api/create" className={styles.description}>
-          <code className={styles.code}>/api/create</code>
+        <Link passHref href="/api/create">
+          <p className={styles.description}>
+            <code className={styles.code}>/api/create</code>
+          </p>
         </Link>
-        <Link href="/api/findUnique" className={styles.description}>
-          <code className={styles.code}>/api/findUnique</code>
+        <Link passHref href="/api/findUnique">
+          <p className={styles.description}>
+            <code className={styles.code}>/api/findUnique</code>
+          </p>
         </Link>
-        <Link href="/api/findUnique/90" className={styles.description}>
-          <code className={styles.code}>/api/findUnique/90</code>
+        <Link passHref href="/api/findUnique/90">
+          <p className={styles.description}>
+            <code className={styles.code}>/api/findUnique/90</code>
+          </p>
         </Link>
       </main>
 
