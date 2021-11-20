@@ -1,0 +1,20 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model RequestHistory {
+  RecordId    Int       @id @default(autoincrement())
+  TenantName  String?   @db.VarChar(255)
+  OfferDate   DateTime? @db.Date
+  ClaimDate   DateTime? @db.Date
+  Memo        String?   @db.VarChar(255)
+  RequestName String?   @db.VarChar(255)
+  ServiceName String?   @db.VarChar(255)
+  CloudName   String?   @db.VarChar(255)
+  isClaimed   Boolean   @default(false)
+}
