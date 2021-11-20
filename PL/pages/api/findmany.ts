@@ -1,16 +1,16 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
-import prisma from '../../lib/prisma';
+import prisma, {RequestHistory} from '../../lib/prisma';
 
 type Data = {
-  count: number;
+  histories: RequestHistory[];
 };
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  const count = await prisma.requestHistory.count();
-  console.log(count);
-  res.status(200).json({ count: Number(count) });
+  const histories = await prisma.requestHistory.findMany();
+  console.log(histories);
+  res.status(200).json({ histories: histories });
 }
