@@ -32,9 +32,9 @@ FROM node:16.12.0-alpine AS builder
 WORKDIR /app
 COPY . .
 # COPY --from=deps /app/node_modules ./node_modules
-RUN yarn install
-RUN npx prisma generate 
-RUN yarn build
+RUN yarn install && yarn build
+# RUN npx prisma generate 
+# RUN yarn build
 
 # Production image, copy all the files and run next
 FROM node:16.12.0-alpine AS runner
