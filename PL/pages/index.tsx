@@ -47,6 +47,11 @@ const Home: NextPage = () => {
             <code className={styles.code}>/api/findUnique/90</code>
           </p>
         </Link>
+        <Link passHref href="/keycloak">
+          <p className={styles.description}>
+            <code className={styles.code}>/keycloak</code>
+          </p>
+        </Link>
       </main>
 
       <footer className={styles.footer}>
