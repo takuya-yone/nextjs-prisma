@@ -5,6 +5,8 @@ import styles from '../styles/Home.module.css';
 import prisma from '../lib/prisma';
 import Link from 'next/link';
 // import axios from 'axios';
+import Button from '@mui/material/Button';
+
 
 import { getCsrfToken,useSession, signIn, signOut } from 'next-auth/react';
 // import { getCsrfToken, useSession, signOut, signIn } from 'next-auth/clients';
@@ -26,7 +28,8 @@ const Home: NextPage = () => {
         </Head>
         <main className={styles.main}>
           <h1>Signed in as {session.user.name} </h1>
-          <button onClick={() => signOut()}>Sign out</button>
+          <Button onClick={() => signOut()} variant="contained" color="success" >LogOut</Button>
+
           <Link passHref href="/">
           <p className={styles.description}>
             <code className={styles.code}>/Top Page</code>
@@ -62,7 +65,8 @@ const Home: NextPage = () => {
       </Head>
       <main className={styles.main}>
         <h1> Not signed in...</h1>
-        <button onClick={() => signIn()}>Sign in</button>{' '}
+        <Button onClick={() => signIn()} variant="contained">Login</Button>
+
         <Link passHref href="/">
           <p className={styles.description}>
             <code className={styles.code}>/Top Page</code>
@@ -84,19 +88,6 @@ const Home: NextPage = () => {
     </div>
   );
 
-  //   return (
-  //     <>
-  //       Signed in as {session.user.email} <br />
-  //       <button onClick={() => signOut()}>Sign out</button>
-  //     </>
-  //   )
-  // }
-  // return (
-  //   <>
-  //     Not signed in <br />
-  //     <button onClick={() => signIn()}>Sign in</button>
-  //   </>
-  // )
 };
 
 export default Home;
