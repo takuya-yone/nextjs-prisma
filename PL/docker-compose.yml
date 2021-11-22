@@ -1,9 +1,18 @@
 version: '3'
 services:
-  nextjs:
-    build: ./
-    # container_name: nextjs-container
-    # image: nextjs-container:1.0.0
+  # nextjs:
+  #   build: ./
+  #   # container_name: nextjs-container
+  #   # image: nextjs-container:1.0.0
+  #   ports:
+  #     # - "3000:3000"
+  #     - "3000:3000"
+
+  keycloak:
+    image: jboss/keycloak
+    restart: always
     ports:
-      # - "3000:3000"
-      - "3000:3000"
+      - 8088:8080
+    environment:
+      KEYCLOAK_USER: admin
+      KEYCLOAK_PASSWORD: password
