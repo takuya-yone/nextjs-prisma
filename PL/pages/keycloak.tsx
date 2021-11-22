@@ -7,8 +7,7 @@ import Link from 'next/link';
 // import axios from 'axios';
 import Button from '@mui/material/Button';
 
-
-import { getCsrfToken,useSession, signIn, signOut } from 'next-auth/react';
+import { getCsrfToken, useSession, signIn, signOut } from 'next-auth/react';
 // import { getCsrfToken, useSession, signOut, signIn } from 'next-auth/clients';
 
 const Home: NextPage = () => {
@@ -28,13 +27,15 @@ const Home: NextPage = () => {
         </Head>
         <main className={styles.main}>
           <h1>Signed in as {session.user.name} </h1>
-          <Button onClick={() => signOut()} variant="contained" color="success" >LogOut</Button>
+          <Button onClick={() => signOut()} variant="contained" color="success">
+            LogOut
+          </Button>
 
           <Link passHref href="/">
-          <p className={styles.description}>
-            <code className={styles.code}>/Top Page</code>
-          </p>
-        </Link>
+            <p className={styles.description}>
+              <code className={styles.code}>/Top Page</code>
+            </p>
+          </Link>
         </main>
         <footer className={styles.footer}>
           <a
@@ -65,7 +66,9 @@ const Home: NextPage = () => {
       </Head>
       <main className={styles.main}>
         <h1> Not signed in...</h1>
-        <Button onClick={() => signIn()} variant="contained">Login</Button>
+        <Button onClick={() => signIn()} variant="contained">
+          Login
+        </Button>
 
         <Link passHref href="/">
           <p className={styles.description}>
@@ -87,7 +90,6 @@ const Home: NextPage = () => {
       </footer>
     </div>
   );
-
 };
 
 export default Home;

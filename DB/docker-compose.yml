@@ -17,6 +17,7 @@ services:
     volumes:
       - ./mysql/conf.d/:/etc/mysql/conf.d/
       - ./mysql/initdb.d/:/docker-entrypoint-initdb.d
+      
   adminer:
     image: adminer
     restart: always
@@ -27,7 +28,7 @@ services:
       ADMINER_DEFAULT_DB_NAME: AccountManagement
 
   keycloak:
-    image: jboss/keycloak
+    build: ./keycloak/
     restart: always
     ports:
       - 8088:8080

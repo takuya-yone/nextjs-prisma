@@ -4,13 +4,11 @@ import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import prisma from '../lib/prisma';
 import Link from 'next/link';
-import { getCsrfToken,useSession, signIn, signOut } from 'next-auth/react';
+import { getCsrfToken, useSession, signIn, signOut } from 'next-auth/react';
 
 const Home: NextPage = () => {
   // axios.get('/api/count').then((response) => console.log(response));
   const { data: session, status } = useSession();
-
-
 
   return (
     <div className={styles.container}>
