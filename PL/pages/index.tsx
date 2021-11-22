@@ -4,10 +4,13 @@ import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import prisma from '../lib/prisma';
 import Link from 'next/link';
-// import axios from 'axios';
+import { getCsrfToken,useSession, signIn, signOut } from 'next-auth/react';
 
 const Home: NextPage = () => {
   // axios.get('/api/count').then((response) => console.log(response));
+  const { data: session, status } = useSession();
+
+
 
   return (
     <div className={styles.container}>
@@ -21,7 +24,12 @@ const Home: NextPage = () => {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
-
+        <h1>Signed in as {session?.user?.name} </h1>
+        <Link passHref href="/api/keycloak">
+          <p className={styles.description}>
+            <code className={styles.code}>/api/keycloak</code>
+          </p>
+        </Link>
         <Link passHref href="/api/count">
           <p className={styles.description}>
             <code className={styles.code}>/api/count</code>
